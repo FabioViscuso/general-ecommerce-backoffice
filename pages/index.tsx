@@ -50,18 +50,18 @@ export default function Home(props: any) {
   }
 
   return (
-    <div className="flex flex-col items-center px-2 pt-32">
+    <div className="flex flex-col items-center px-2 pt-32 w-full">
       <h1 className='font-caveat text-4xl mb-6'>Add product</h1>
       <section className="mb-10">
         <form onSubmit={insertProductInDB} className="flex flex-col max-w-4xl gap-10 items-center mb-20">
           <input type="text" ref={inputNameRef} required className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Product name" />
           <input type="text" ref={inputDescriptionRef} required className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Product description" />
-          <input type="number" ref={inputPriceRef} required min={1} max={30} step={0.1} className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Price" />
+          <input type="number" ref={inputPriceRef} required min={1} max={30} step={0.01} className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Price" />
           <input type="text" ref={inputImageURLRef} required className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Image URL" />
           <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-300 transition duration-150 ease-in-out hover:bg-pink-300 bg-pink-200 rounded text-gray-900 hover:text-gray-900 px-8 py-2 text-md">Insert new product</button>
         </form>
       </section>
-      <section className="flex flex-col justify-start items-center overflow-x-hidden overflow-y-auto py-4">
+      <section className="flex flex-col justify-start items-center overflow-x-hidden overflow-y-auto w-full py-4">
         <h2 className='text-4xl mb-8 font-indieflower'>{"Current products in the database"}</h2>
         <ul className='shop-grid gap-5 justify-between items-center w-full px-5'>
           {
