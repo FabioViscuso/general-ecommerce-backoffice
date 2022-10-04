@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "products" ALTER COLUMN "imgUrl" SET DATA TYPE VARCHAR;

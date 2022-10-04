@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    justify-content: center;
+  }
+}
+#__next {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/** CUSTOM FONTS **/
+@font-face{
+  font-family: "Caveat";
+  src: url("../public/fonts/caveat/Caveat-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "Indie Flower";
+  src: url("../public/fonts/indieflower/IndieFlower-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body, html {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(115deg, #b09baa, #e2c3c8)
+}
+
+*::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: #b09baa;        /* color of the tracking area */
+  border-radius: 20px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #e2c3c8;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #b09baa;  /* creates padding around scroll thumb */
+}
+
+::selection {
+  background-color: #eeeeee;
+  color: #222222;
+}
