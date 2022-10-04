@@ -3,13 +3,15 @@ import { CartItem } from "../../lib/store/cartStore";
 import useUIstore from "../../lib/store/UIstore";
 import Link from "next/link";
 import Router from "next/router";
+import React from "react";
 
 export const ProductItem = (props: CartItem) => {
     const showNotification = useUIstore(store => store.setNotificationContent)
 
     const id = props.id;
 
-    async function deleteHandler() {
+    async function deleteHandler(event: React.FormEvent) {
+        event.preventDefault();
         const response = await fetch('/api/products/delete', {
             method: 'DELETE',
             headers: {
@@ -36,10 +38,10 @@ export const ProductItem = (props: CartItem) => {
                 </header>
                 <p className='text-xl'>{props.description}</p>
             </div>
-            <Link href={'/'}>
+            <Link href={'/products/' + id}>
                 <p className='bg-pink-200 w-full p-2 self-stretch text-center text-xl cursor-pointer'>Edit Product</p>
             </Link>
-            <button onClick={() => deleteHandler()} className='bg-pink-400 rounded-b-md w-full p-2 self-stretch text-center text-xl cursor-pointer'>Delete Product</button>
+            <button onClick={deleteHandler} className='bg-pink-400 rounded-b-md w-full p-2 self-stretch text-center text-xl cursor-pointer'>Delete Product</button>
         </li>
     );
 };
