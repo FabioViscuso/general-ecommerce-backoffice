@@ -5,7 +5,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'DELETE') {
         env.prisma.users.delete({
             where: {
-                username: req.body.username
+                id: req.body.id
             }
         })
             .then(() => res.status(200).json({ message: 'user deleted' }))

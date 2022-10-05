@@ -5,7 +5,7 @@ import Link from "next/link";
 import Router from "next/router";
 import React from "react";
 
-export const ProductItem = (props: CartItem) => {
+export const ProductCard = (props: CartItem) => {
     const showNotification = useUIstore(store => store.setNotificationContent)
 
     const id = props.id;

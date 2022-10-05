@@ -45,7 +45,7 @@ export default function ProductItem(props: any) {
             })
         })
         if (response.ok) {
-            showNotification(true, 'product added successfully')
+            showNotification(true, 'product updated successfully')
             Router.push('/')
         } else {
             const data = await response.json()
@@ -63,7 +63,7 @@ export default function ProductItem(props: any) {
             body: JSON.stringify({ id: id })
         })
         if (response.ok) {
-            showNotification(true, 'product added successfully')
+            showNotification(true, 'product deleted successfully')
             Router.push('/')
         } else {
             const data = await response.json()
