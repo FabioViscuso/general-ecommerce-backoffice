@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Router from "next/router";
 import useUIstore from "../../lib/store/UIstore";
 
@@ -22,8 +23,8 @@ export default function UserCard(props: Props) {
             body: JSON.stringify({ id: props.id })
         })
         if (response.ok) {
-            showNotification(true, 'product added successfully')
-            Router.push('/')
+            showNotification(true, 'user deleted successfully')
+            Router.push('/users')
         } else {
             const data = await response.json()
             showNotification(true, data.message)
@@ -38,6 +39,9 @@ export default function UserCard(props: Props) {
                 <p className="text-sm">Created: <span className="text-xl">{props.createdAt}</span></p>
                 <p className="text-sm">Last Updated: <span className="text-xl">{props.updatedAt}</span></p>
             </div>
+            <Link href={'/users/' + props.id}>
+                <p className='bg-pink-200 w-full p-2 self-stretch text-center text-xl cursor-pointer'>Edit User</p>
+            </Link>
             <button onClick={deleteHandler} className='bg-pink-400 rounded-b-md w-full p-2 self-stretch text-center text-xl cursor-pointer'>Delete User</button>
         </div>
     )

@@ -3,9 +3,16 @@
 @tailwind utilities;
 
 @layer utilities {
-  .shop-grid {
+  .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     justify-items: center;
     justify-content: center;
   }

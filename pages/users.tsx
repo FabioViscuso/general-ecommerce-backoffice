@@ -36,7 +36,7 @@ export default function Home(props: Props) {
         })
 
         if (response.ok) {
-            showNotification(true, 'product added successfully')
+            showNotification(true, 'user created successfully')
             Router.push('/users')
         } else {
             const data = await response.json()
@@ -46,18 +46,18 @@ export default function Home(props: Props) {
 
     return (
         <div className="flex flex-col items-center px-2 pt-32 w-full">
-            <h1 className='font-caveat text-4xl mb-6'>Add product</h1>
-            <section className="mb-10">
-                <form onSubmit={insertUserInDB} className="flex flex-col max-w-4xl gap-10 items-center mb-20">
+            <h1 className='font-caveat text-4xl mb-6'>Add new user</h1>
+            <form onSubmit={insertUserInDB} className=" flex flex-col items-center gap-8 w-full px-4 mb-20">
+                <div className="w-full flex gap-10 justify-between items-center">
                     <input type="text" ref={inputNameRef} required className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Username" />
                     <input type="text" ref={inputEmailRef} required className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Email" />
                     <input type="password" ref={inputPasswordRef} required className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Password" />
-                    <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-300 transition duration-150 ease-in-out hover:bg-pink-300 bg-pink-200 rounded text-gray-900 hover:text-gray-900 px-8 py-2 text-md">Insert new User</button>
-                </form>
-            </section>
+                </div>
+                <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-300 transition duration-150 ease-in-out hover:bg-pink-300 bg-pink-200 rounded text-gray-900 hover:text-gray-900 w-max px-12 py-4 text-md">Insert new User</button>
+            </form>
             <section className="flex flex-col justify-start items-center overflow-x-hidden overflow-y-auto w-full py-4">
                 <h2 className='text-4xl mb-8 font-indieflower'>{"Registered users"}</h2>
-                <ul className='shop-grid gap-5 justify-between items-center w-full px-5'>
+                <ul className='users-grid gap-5 justify-between items-center w-full px-5'>
                     {
                         props.users.map((item: any) =>
                             <UserCard
