@@ -49,7 +49,7 @@ export default function ProductItem(props: any) {
             Router.push('/')
         } else {
             const data = await response.json()
-            showNotification(true, data.message)
+            showNotification(false, data.message)
         }
     }
 
@@ -67,7 +67,7 @@ export default function ProductItem(props: any) {
             Router.push('/')
         } else {
             const data = await response.json()
-            showNotification(true, data.message)
+            showNotification(false, data.message)
         }
     }
 
