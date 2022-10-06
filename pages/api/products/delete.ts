@@ -8,7 +8,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
                 id: req.body.id
             }
         })
-            .then(() => res.status(200).json({ message: 'product deleted' }))
+            .then(() => res.status(200).json({ message: 'Product deleted successfully' }))
             .catch((err) => res.status(500).json({ message: err }))
     } else {
         res.json({ message: 'method now allowed' })

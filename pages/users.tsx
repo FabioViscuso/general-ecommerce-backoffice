@@ -40,7 +40,7 @@ export default function Home(props: Props) {
             Router.push('/users')
         } else {
             const data = await response.json()
-            showNotification(true, data.message)
+            showNotification(false, data.message)
         }
     }
 
@@ -80,7 +80,6 @@ export default function Home(props: Props) {
 export const getServerSideProps: GetServerSideProps = async () => {
 
     const users = await env.prisma.users.findMany();
-    console.log(users)
     env.prisma.$disconnect;
 
     return {

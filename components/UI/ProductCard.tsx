@@ -34,7 +34,7 @@ export const ProductCard = (props: CartItem) => {
             <div className='py-4 px-4'>
                 <header>
                     <h3 className='text-3xl'>{props.title}</h3>
-                    <div className='text-2xl'>$ {props.price}</div>
+                    <div className='text-2xl'>$ {props.price.toFixed(2)}</div>
                 </header>
                 <p className='text-xl'>{props.description}</p>
             </div>
