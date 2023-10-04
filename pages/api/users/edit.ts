@@ -10,7 +10,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             },
             data: {
                 username: req.body.username,
-                email: req.body.email,
             }
         })
             /* If an email is found, then the new email is not unique: send an error back

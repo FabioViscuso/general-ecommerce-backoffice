@@ -29,8 +29,8 @@ export const ProductCard = (props: CartItem) => {
     }
 
     return (
-        <li className='flex flex-col flex-wrap rounded-md bg-slate-100 w-full font-indieflower'>
-            <img className='w-full h-40 object-cover rounded-tl-md rounded-tr-md' src={props.imgUrl} alt="" />
+        <li className='flex flex-col flex-wrap rounded-md bg-slate-100 w-full'>
+            <img className='w-full h-40 object-contain rounded-tl-md rounded-tr-md' src={props.imgUrl} alt="" />
             <div className='py-4 px-4'>
                 <header>
                     <h3 className='text-3xl'>{props.title}</h3>
@@ -39,9 +39,9 @@ export const ProductCard = (props: CartItem) => {
                 <p className='text-xl'>{props.description}</p>
             </div>
             <Link href={'/products/' + id}>
-                <p className='bg-pink-200 w-full p-2 self-stretch text-center text-xl cursor-pointer'>Edit Product</p>
+                <p className='bg-slate-200 w-full p-2 self-stretch text-center text-xl cursor-pointer'>Edit Product</p>
             </Link>
-            <button onClick={deleteHandler} className='bg-pink-400 rounded-b-md w-full p-2 self-stretch text-center text-xl cursor-pointer'>Delete Product</button>
+            <button onClick={deleteHandler} className='bg-slate-400 rounded-b-md w-full p-2 self-stretch text-center text-xl cursor-pointer'>Delete Product</button>
         </li>
     );
 };

@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { Footer } from './Footer'
 import RenderedNotificationPopup from '../UI/NotificationPopup'
 import useUIstore from '../../lib/store/UIstore'
 import { Navbar } from './Navbar'
@@ -29,7 +28,6 @@ export default function Layout({ children }: Props) {
                 <>
                     {children}
                 </>
-                <Footer />
             </div>
         </>
     )

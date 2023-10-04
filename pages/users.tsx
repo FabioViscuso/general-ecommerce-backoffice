@@ -46,17 +46,17 @@ export default function Home(props: Props) {
 
     return (
         <div className="flex flex-col items-center px-2 pt-32 w-full">
-            <h1 className='font-caveat text-4xl mb-6'>Add new user</h1>
+            <h1 className='text-4xl mb-6'>Add new user</h1>
             <form onSubmit={insertUserInDB} className=" flex flex-col items-center gap-8 w-full px-4 mb-20">
                 <div className="w-full flex gap-10 justify-between items-center">
-                    <input type="text" ref={inputNameRef} required className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Username" />
-                    <input type="text" ref={inputEmailRef} required className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Email" />
-                    <input type="password" ref={inputPasswordRef} required className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Password" />
+                    <input type="text" ref={inputNameRef} required className="text-gray-600 focus:outline-none focus:border focus:border-blue-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Username" />
+                    <input type="text" ref={inputEmailRef} required className="text-gray-600 focus:outline-none focus:border focus:border-blue-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Email" />
+                    <input type="password" ref={inputPasswordRef} required className="text-gray-600 focus:outline-none focus:border focus:border-blue-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Password" />
                 </div>
-                <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-300 transition duration-150 ease-in-out hover:bg-pink-300 bg-pink-200 rounded text-gray-900 hover:text-gray-900 w-max px-12 py-4 text-md">Insert new User</button>
+                <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300 transition duration-150 ease-in-out hover:bg-blue-300 bg-blue-200 rounded text-gray-900 hover:text-gray-900 w-max px-12 py-4 text-md">Insert new User</button>
             </form>
             <section className="flex flex-col justify-start items-center overflow-x-hidden overflow-y-auto w-full py-4">
-                <h2 className='text-4xl mb-8 font-indieflower'>{"Registered users"}</h2>
+                <h2 className='text-4xl mb-8'>{"Registered users"}</h2>
                 <ul className='users-grid gap-5 justify-between items-center w-full px-5'>
                     {
                         props.users.map((item: any) =>
@@ -64,7 +64,6 @@ export default function Home(props: Props) {
                                 key={item.id}
                                 id={item.id}
                                 username={item.username}
-                                email={item.email}
                                 createdAt={item.createdAt}
                                 updatedAt={item.updatedAt}
                             />
@@ -87,7 +86,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
             users: users.map(user => ({
                 id: user.id,
                 username: user.username,
-                email: user.email,
                 createdAt: user.createdAt.toISOString(),
                 updatedAt: user.updatedAt.toISOString()
             }))

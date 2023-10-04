@@ -1,7 +1,8 @@
 -- CreateTable
 CREATE TABLE "products" (
     "id" TEXT NOT NULL,
-    "productName" VARCHAR(255) NOT NULL,
+    "imgUrl" VARCHAR NOT NULL,
+    "title" VARCHAR(255) NOT NULL,
     "description" VARCHAR(255) NOT NULL,
     "price" DOUBLE PRECISION NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -14,7 +15,6 @@ CREATE TABLE "products" (
 CREATE TABLE "users" (
     "id" TEXT NOT NULL,
     "username" VARCHAR(255) NOT NULL,
-    "email" VARCHAR(255) NOT NULL,
     "password" VARCHAR(255) NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
@@ -23,13 +23,10 @@ CREATE TABLE "users" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "products_productName_key" ON "products"("productName");
+CREATE UNIQUE INDEX "products_title_key" ON "products"("title");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "products_description_key" ON "products"("description");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "users_username_key" ON "users"("username");
-
--- CreateIndex
-CREATE UNIQUE INDEX "users_email_key" ON "users"("email");

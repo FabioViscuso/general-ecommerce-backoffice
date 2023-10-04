@@ -50,18 +50,18 @@ export default function Home(props: Props) {
 
   return (
     <div className="flex flex-col items-center pt-32 w-full">
-      <h1 className='font-caveat text-4xl mb-6'>Add product</h1>
+      <h1 className='text-4xl mb-6'>Add product</h1>
       <form onSubmit={insertProductInDB} className=" flex flex-col items-center gap-8 w-full px-4 mb-20">
         <div className="w-full flex gap-10 justify-between items-center">
-          <input type="text" ref={inputNameRef} required className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Product name" />
-          <input type="text" ref={inputDescriptionRef} required className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Product description" />
-          <input type="number" ref={inputPriceRef} required min={1} max={30} step={0.01} className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Price" />
-          <input type="text" ref={inputImageURLRef} required className="text-gray-600 focus:outline-none focus:border focus:border-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Image URL" />
+          <input type="text" ref={inputNameRef} required className="text-gray-600 focus:outline-none focus:border focus:border-blue-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Product name" />
+          <input type="text" ref={inputDescriptionRef} required className="text-gray-600 focus:outline-none focus:border focus:border-blue-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Product description" />
+          <input type="number" ref={inputPriceRef} required min={1} max={30} step={0.01} className="text-gray-600 focus:outline-none focus:border focus:border-blue-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Price" />
+          <input type="text" ref={inputImageURLRef} required className="text-gray-600 focus:outline-none focus:border focus:blue-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Image URL" />
         </div>
-        <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-300 transition duration-150 ease-in-out hover:bg-pink-300 bg-pink-200 rounded text-gray-900 hover:text-gray-900 w-max px-12 py-4 text-md">Insert new product</button>
+        <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300 transition duration-150 ease-in-out hover:bg-blue-300 bg-blue-200 rounded text-gray-900 hover:text-gray-900 w-max px-12 py-4 text-md">Insert new product</button>
       </form>
       <section className="flex flex-col justify-start items-center overflow-x-hidden overflow-y-auto w-full py-4">
-        <h2 className='text-4xl mb-8 font-indieflower'>{"Current products in the database"}</h2>
+        <h2 className='text-4xl mb-8'>{"Current products in the database"}</h2>
         <ul className='products-grid gap-5 justify-between items-center w-full px-5'>
           {
             props.products.map((item: CartItem) =>

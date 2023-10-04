@@ -7,7 +7,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         env.prisma.users.create({
             data: {
                 username: req.body.username,
-                email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10)
             }
         })

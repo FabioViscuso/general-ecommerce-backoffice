@@ -82,9 +82,9 @@ export default function ProductItem(props: any) {
                     <input ref={descriptionInputRef} className='text-xl bg-slate-100 w-full' defaultValue={props.product.description} required />
                 </div>
                 <input ref={imgUrlInputRef} className='bg-gray-200 w-full p-2 self-stretch text-center text-xl' type="text" defaultValue={props.product.imgUrl} required />
-                <p className='bg-pink-200 w-full p-2 self-stretch text-center text-xl cursor-pointer'>Prod. ID: {id}</p>
-                <button className='bg-pink-200 w-full p-2 self-stretch text-center text-xl cursor-pointer'>Save Changes</button>
-                <button type="button" onClick={deleteHandler} className='bg-pink-400 rounded-b-md w-full p-2 self-stretch text-center text-xl cursor-pointer'>Delete Product</button>
+                <p className='bg-slate-200 w-full p-2 self-stretch text-center text-xl cursor-pointer'>Prod. ID: {id}</p>
+                <button className='bg-slate-200 w-full p-2 self-stretch text-center text-xl cursor-pointer'>Save Changes</button>
+                <button type="button" onClick={deleteHandler} className='bg-slate-400 rounded-b-md w-full p-2 self-stretch text-center text-xl cursor-pointer'>Delete Product</button>
             </form>
         </div>
     );

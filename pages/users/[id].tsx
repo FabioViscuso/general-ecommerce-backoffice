@@ -67,12 +67,11 @@ export default function User(props: Props) {
                 <div className="p-6">
                     <p className="text-sm">User ID: <span className="text-xl">{props.user.id}</span></p>
                     <p className="text-sm w-full">Username: <input type="text" ref={usernameInputRef} className="bg-transparent w-max text-xl" defaultValue={props.user.username} /></p>
-                    <p className="text-sm w-full">Email: <input type="text" ref={emailInputRef} className="bg-transparent w-max text-xl" defaultValue={props.user.email} /></p>
                     <p className="text-sm">Created: <span className="text-xl">{String(props.user.createdAt)}</span></p>
                     <p className="text-sm">Last Updated: <span className="text-xl">{String(props.user.updatedAt)}</span></p>
                 </div>
-                <button className='bg-pink-200 w-full p-2 self-stretch text-center text-xl cursor-pointer'>Save Changes</button>
-                <button type="button" onClick={deleteHandler} className='bg-pink-400 rounded-b-md w-full p-2 self-stretch text-center text-xl cursor-pointer'>Delete Product</button>
+                <button className='bg-slate-200 w-full p-2 self-stretch text-center text-xl cursor-pointer'>Save Changes</button>
+                <button type="button" onClick={deleteHandler} className='bg-slate-400 rounded-b-md w-full p-2 self-stretch text-center text-xl cursor-pointer'>Delete Product</button>
             </form>
         </div>
     );
@@ -92,7 +91,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             user: {
                 id: product!.id,
                 username: product!.username,
-                email: product!.email,
                 createdAt: product!.createdAt.toISOString(),
                 updatedAt: product!.updatedAt.toISOString()
             }

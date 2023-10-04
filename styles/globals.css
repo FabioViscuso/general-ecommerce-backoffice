@@ -23,27 +23,10 @@
   overflow-x: hidden;
 }
 
-/** CUSTOM FONTS **/
-@font-face{
-  font-family: "Caveat";
-  src: url("../public/fonts/caveat/Caveat-Regular.ttf") format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face{
-  font-family: "Indie Flower";
-  src: url("../public/fonts/indieflower/IndieFlower-Regular.ttf") format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-body, html {
+body {
   min-height: 100vh;
   width: 100%;
-  background-image: linear-gradient(115deg, #b09baa, #e2c3c8)
+  background-color: #c8c8c8;
 }
 
 *::-webkit-scrollbar {
@@ -51,7 +34,7 @@ body, html {
 }
 
 *::-webkit-scrollbar-track {
-  background: #b09baa;        /* color of the tracking area */
+  background: #141414;        /* color of the tracking area */
   border-radius: 20px;
 }
 
@@ -60,9 +43,9 @@ body, html {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #e2c3c8;    /* color of the scroll thumb */
+  background-color: #474747;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid #b09baa;  /* creates padding around scroll thumb */
+  border: 3px solid #e3e3e3;  /* creates padding around scroll thumb */
 }
 
 ::selection {

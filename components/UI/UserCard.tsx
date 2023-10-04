@@ -5,7 +5,6 @@ import useUIstore from "../../lib/store/UIstore";
 interface Props {
     id: string,
     username: string,
-    email: string,
     createdAt: string,
     updatedAt: string
 }
@@ -35,14 +34,13 @@ export default function UserCard(props: Props) {
             <div className="p-6">
                 <p className="text-sm">User ID: <span className="text-xl">{props.id}</span></p>
                 <p className="text-sm">Username: <span className="text-xl">{props.username}</span></p>
-                <p className="text-sm">Email: <span className="text-xl">{props.email}</span></p>
                 <p className="text-sm">Created: <span className="text-xl">{props.createdAt}</span></p>
                 <p className="text-sm">Last Updated: <span className="text-xl">{props.updatedAt}</span></p>
             </div>
             <Link href={'/users/' + props.id}>
-                <p className='bg-pink-200 w-full p-2 self-stretch text-center text-xl cursor-pointer'>Edit User</p>
+                <p className='bg-slate-200 w-full p-2 self-stretch text-center text-xl cursor-pointer'>Edit User</p>
             </Link>
-            <button onClick={deleteHandler} className='bg-pink-400 rounded-b-md w-full p-2 self-stretch text-center text-xl cursor-pointer'>Delete User</button>
+            <button onClick={deleteHandler} className='bg-slate-400 rounded-b-md w-full p-2 self-stretch text-center text-xl cursor-pointer'>Delete User</button>
         </div>
     )
 }
