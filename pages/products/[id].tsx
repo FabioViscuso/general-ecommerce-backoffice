@@ -78,7 +78,7 @@ export default function ProductItem(props: any) {
                 <img className='w-full h-40 object-cover rounded-tl-md rounded-tr-md' src={props.product.imgUrl} alt="" />
                 <div className='flex flex-col items-start py-4 px-4'>
                     <input ref={titleInputRef} className='text-3xl bg-slate-100 w-full' defaultValue={props.product.title} required />
-                    <span className='text-2xl bg-slate-100'>$ <input ref={priceInputRef} type="number" min={1} max={30} step={0.01} className="text-2xl bg-slate-100" defaultValue={props.product.price} required /></span>
+                    <span className='text-2xl bg-slate-100'>$ <input ref={priceInputRef} type="number" min={1} max={100} step={0.01} className="text-2xl bg-slate-100" defaultValue={props.product.price} required /></span>
                     <input ref={descriptionInputRef} className='text-xl bg-slate-100 w-full' defaultValue={props.product.description} required />
                 </div>
                 <input ref={imgUrlInputRef} className='bg-gray-200 w-full p-2 self-stretch text-center text-xl' type="text" defaultValue={props.product.imgUrl} required />

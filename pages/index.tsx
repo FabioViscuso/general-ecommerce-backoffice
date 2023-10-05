@@ -55,7 +55,7 @@ export default function Home(props: Props) {
         <div className="w-full flex gap-10 justify-between items-center">
           <input type="text" ref={inputNameRef} required className="text-gray-600 focus:outline-none focus:border focus:border-blue-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Product name" />
           <input type="text" ref={inputDescriptionRef} required className="text-gray-600 focus:outline-none focus:border focus:border-blue-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Product description" />
-          <input type="number" ref={inputPriceRef} required min={1} max={30} step={0.01} className="text-gray-600 focus:outline-none focus:border focus:border-blue-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Price" />
+          <input type="number" ref={inputPriceRef} required min={1} max={100} step={0.01} className="text-gray-600 focus:outline-none focus:border focus:border-blue-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Price" />
           <input type="text" ref={inputImageURLRef} required className="text-gray-600 focus:outline-none focus:border focus:blue-pink-300 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Image URL" />
         </div>
         <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300 transition duration-150 ease-in-out hover:bg-blue-300 bg-blue-200 rounded text-gray-900 hover:text-gray-900 w-max px-12 py-4 text-md">Insert new product</button>
